@@ -1,0 +1,17 @@
+{
+  "name": "next-planner-ufc",
+  "version": "1.0.0",
+  "description": "Um projeto com intuito de elaborar um cronograma com matérias sugeridas para o próximo semestre.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.12",
+    "dotenv": "^16.3.1",
+    "puppeteer": "^21.5.2"
+  }
+}
