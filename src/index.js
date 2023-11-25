@@ -20,10 +20,10 @@ const sleep = (ms) => new Promise((res) => setTimeout(res, ms));
   await p.goTo(page, "https://si3.ufc.br/sigaa/verTelaLogin.do");
   await p.doLogin(page, LOGIN.user, LOGIN.pass);
 
-  // await p.goTo(page, "https://si3.ufc.br/sigaa/paginaInicial.do");
-  // await p.goToHome(page);
-  // await p.goToProgress(page);
-  // console.log(await e.extractProgress(page)); // Array de Progresso
+  await p.goTo(page, "https://si3.ufc.br/sigaa/paginaInicial.do");
+  await p.goToHome(page);
+  await p.goToProgress(page);
+  console.log(await e.extractProgress(page)); // Array de Progresso
 
   await p.goTo(page, "https://si3.ufc.br/sigaa/paginaInicial.do");
   await p.goToHome(page);
