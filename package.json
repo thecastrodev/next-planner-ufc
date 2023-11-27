@@ -2,10 +2,10 @@
   "name": "next-planner-ufc",
   "version": "1.0.0",
   "description": "Um projeto com intuito de elaborar um cronograma com matérias sugeridas para o próximo semestre.",
-  "main": "src/index.js",
+  "main": "backend/src/index.js",
   "type": "commonjs",
   "scripts": {
-    "start": "node src/index.js"
+    "start": "node backend/src/index.js"
   },
   "keywords": [],
   "author": "",
