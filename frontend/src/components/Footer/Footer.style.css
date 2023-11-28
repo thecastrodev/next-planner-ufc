@@ -1,0 +1,11 @@
+.footer {
+  background: rgb(155, 155, 221);
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.txt {
+  padding: 5px;
+}
