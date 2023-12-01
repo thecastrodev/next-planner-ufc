@@ -3,16 +3,19 @@
   "version": "1.0.0",
   "description": "Um projeto com intuito de elaborar um cronograma com matérias sugeridas para o próximo semestre.",
   "main": "src/index.js",
-  "type": "commonjs",
+  "type": "module",
   "scripts": {
-    "start": "node src/index.js"
+    "start": "node src/index.js",
+    "server": "nodemon index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "cheerio": "^1.0.0-rc.12",
+    "cors": "^2.8.5",
     "dotenv": "^16.3.1",
+    "express": "^4.18.2",
     "puppeteer": "^21.5.2"
   }
 }
