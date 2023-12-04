@@ -9,45 +9,59 @@ const LOGIN = {
 
 const COD_CURSO = "657484";
 
-const p = new Puppeteer();
-const e = new Extractor();
 const sleep = (ms) => new Promise((res) => setTimeout(res, ms));
 
 async function getDisciplinas() {
-  await p.initBrowser();
+  try {
 
-  page = await p.getNewPage();
-  await p.goTo(page, "https://si3.ufc.br/sigaa/verTelaLogin.do");
-  await p.doLogin(page, LOGIN.user, LOGIN.pass);
+    const p = new Puppeteer();
+    const e = new Extractor();
 
-  await p.goTo(page, "https://si3.ufc.br/sigaa/paginaInicial.do");
-  await p.goToHome(page);
-  await p.goToProgress(page);
-  let disciplinasCursadas = await e.extractProgress(page); // Array de Progresso
+    await p.initBrowser();
 
-  await sleep(3000);
-  p.closeBrowser();
-
-  return disciplinasCursadas
+    const page = await p.getNewPage();
+    await p.goTo(page, "https://si3.ufc.br/sigaa/verTelaLogin.do");
+    await p.doLogin(page, LOGIN.user, LOGIN.pass);
+  
+    await p.goTo(page, "https://si3.ufc.br/sigaa/paginaInicial.do");
+    await p.goToHome(page);
+    await p.goToProgress(page);
+    let disciplinasCursadas = await e.extractProgress(page); // Array de Progresso
+  
+    await sleep(3000);
+    p.closeBrowser();
+  
+    return disciplinasCursadas
+  } catch (error) {
+    console.log(error)
+  }
 }
 
 async function getTurmas() {
-  await p.initBrowser();
+  try {
 
-  page = await p.getNewPage();
-  await p.goTo(page, "https://si3.ufc.br/sigaa/verTelaLogin.do");
-  await p.doLogin(page, LOGIN.user, LOGIN.pass);
+    const p = new Puppeteer();
+    const e = new Extractor();
 
-  await p.goTo(page, "https://si3.ufc.br/sigaa/paginaInicial.do");
-  await p.goToHome(page);
-  await p.goToClassRoom(page);
-  await p.goToClassRoomSearch(page, COD_CURSO);
-  let turmas = await e.extractClassRooms(page); // Array de Disciplinas
+    await p.initBrowser();
 
-  await sleep(3000);
-  p.closeBrowser();
+    const page = await p.getNewPage();
+    await p.goTo(page, "https://si3.ufc.br/sigaa/verTelaLogin.do");
+    await p.doLogin(page, LOGIN.user, LOGIN.pass);
 
-  return turmas
+    await p.goTo(page, "https://si3.ufc.br/sigaa/paginaInicial.do");
+    await p.goToHome(page);
+    await p.goToClassRoom(page);
+    await p.goToClassRoomSearch(page, COD_CURSO);
+    let turmas = await e.extractClassRooms(page); // Array de Disciplinas
+
+    await sleep(3000);
+    p.closeBrowser();
+
+    return turmas
+  } catch (error) {
+    console.log(error)
+  }
 }
 
 module.exports = {
