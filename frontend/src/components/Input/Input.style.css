@@ -1,0 +1,12 @@
+.div-input {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+input {
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+}
