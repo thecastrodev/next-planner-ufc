@@ -5,9 +5,9 @@ import { ApiProvider } from "./context/APIcontext";
 function App() {
   return (
     <div className="App">
-      <Router>
-        <ApiProvider />
-      </Router>
+      <ApiProvider>
+        <Router />
+      </ApiProvider>
     </div>
   );
 }
