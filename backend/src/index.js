@@ -1,11 +1,11 @@
 require("dotenv").config();
-const { Extractor } = require('./handlers/Extractor');
-const { Puppeteer } = require('./libs/Puppeteer');
+const { Extractor } = require("./handlers/Extractor");
+const { Puppeteer } = require("./libs/Puppeteer");
 
 const LOGIN = {
   user: process.env.USER_LOGIN || "username",
-  pass: process.env.PASS_LOGIN || "password"
-}
+  pass: process.env.PASS_LOGIN || "password",
+};
 
 const COD_CURSO = "657484";
 
@@ -28,7 +28,7 @@ async function getDisciplinas() {
   await sleep(3000);
   p.closeBrowser();
 
-  return disciplinasCursadas
+  return disciplinasCursadas;
 }
 
 async function getTurmas() {
@@ -47,10 +47,10 @@ async function getTurmas() {
   await sleep(3000);
   p.closeBrowser();
 
-  return turmas
+  return turmas;
 }
 
 module.exports = {
   getDisciplinas,
-  getTurmas
-}
+  getTurmas,
+};
